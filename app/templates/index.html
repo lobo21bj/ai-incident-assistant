@@ -18,7 +18,7 @@
             Analyze production incidents using AI.
         </p>
 
-        <form>
+        <form method="post">
 
             <label for="incident-title">
                 Incident Title
@@ -26,7 +26,9 @@
 
             <input
                 id="incident-title"
+                name="incident_title"
                 type="text"
+                value="{{ title }}"
                 placeholder="Database timeout after deployment"
             >
 
@@ -36,9 +38,10 @@
 
             <textarea
                 id="logs"
+                name="logs"
                 rows="15"
                 placeholder="Paste your logs here..."
-            ></textarea>
+            >{{ logs }}</textarea>
 
             <div class="button-container">
                 <button type="submit">
@@ -48,16 +51,15 @@
 
         </form>
 
-        <div class="result-box">
-
+       <div class="result-box">
             <h2>Analysis Result</h2>
-
-            <p>No analysis yet.</p>
-
+            {% if result %}
+                <pre>{{ result }}</pre>
+            {% else %}
+                <p>No analysis yet.</p>
+            {% endif %}
         </div>
-
     </div>
-
 </body>
 
 </html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AI Incident Assistant</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>AI Incident Assistant</h1>
+
+        <p>
+            Analyze production incidents using AI.
+        </p>
+
+        <form>
+
+            <label for="incident-title">
+                Incident Title
+            </label>
+
+            <input
+                id="incident-title"
+                type="text"
+                placeholder="Database timeout after deployment"
+            >
+
+            <label for="logs">
+                Logs
+            </label>
+
+            <textarea
+                id="logs"
+                rows="15"
+                placeholder="Paste your logs here..."
+            ></textarea>
+
+            <div class="button-container">
+                <button type="submit">
+                    Analyze
+                </button>
+            </div>
+
+        </form>
+
+        <div class="result-box">
+
+            <h2>Analysis Result</h2>
+
+            <p>No analysis yet.</p>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
